@@ -13,18 +13,25 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-// on button click start function, prompt and store length
-function writePassword() {
-  var PWlength = prompt("Specify a password length between 8 - 128 charachters", "8-128");
-  console.log(PWlength);
-return;
-}
+// declare variable PWlength
+var PWlength = NaN;
+var spc = undefined;
 
-if (( 8 <= PWlength) && (PWlength <= 128)) {
-  window.alert("That checks out...");
-} else {
-  PWlength = undefined;
-  writePassword();
-  console.log("Good enough")
+// on button click start function, prompt and store length
+function generatePassword() {
+  var PWlength = prompt("Specify a password length between 8 - 128 characters", "8-128");
+  parseInt(PWlength);
+  console.log(PWlength);
+  if (( PWlength >= 8) && (PWlength <= 128)) {
+    var spc = window.confirm("Include special characters?");
+    console.log(spc);
+    
+  } else {
+    // PWlength = undefined;
+    console.log("NOPE.");
+    generatePassword();
+  }
+  return;
+
 }
 // variable not scoped outside function, if statements not chained into initial function..
