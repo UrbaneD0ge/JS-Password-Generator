@@ -32,7 +32,6 @@ function generatePassword() {
 // convert PWlength string to integer, log //
   parseInt(PWlength);
   console.log(PWlength);
-  console.log(PWlength.length);
 
 
   // Validate PWlength 
@@ -46,13 +45,19 @@ function generatePassword() {
     var num = window.confirm("Include numeric characters?");
     console.log(num);
 
-    // set password to blank, start adding characters //
-    for (var i = PWlength.length; i >= PWlength; i++) {
-      console.log(i);
-      password = "";
+    // set password to blank, for loop to add characters //
+    password = "";
+    for (var i = 0; i = PWlength; i++) {
       // model code from W3 demo
-      Math.floor(Math.random() * PWlength.length);
-
+      password += alpha.charAt(
+        Math.floor(Math.random() * PWlength)
+        );
+        // if spc = true, select from charset that includes 
+        if (spc = true) {
+          Math.random
+        }
+      console.log(password)
+      return password;
     }
 
   } else {
